@@ -1,4 +1,5 @@
 
+/*Desktop version (outside of any media query)*/
 html {
   font-size: 16px;
   font-family: 'Lato', sans-serif;
@@ -7,7 +8,6 @@ html {
 
 body {
   margin: 0;
-  transition: all 750ms ease-in 250ms;
 }
 a {
   text-decoration: none;
@@ -42,32 +42,6 @@ h4 {
 p {
   font-family: "Lato", sans-serif;
 }
-button {
-  font-family: "Comfortaa", sans-serif;
-  background: white;
-  padding: 20px 40px;
-  color: black;
-  text-decoration: none;
-  font-size: 1.45em;
-  margin: 1rem 0;
-  width: 85%;
-  border-radius: 10px;
-  border: 1px solid grey;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-  outline: 1px solid;
-  outline-color: rgba(255, 255, 255, .01);
-  outline-offset: 0px;
-  text-shadow: none;
-  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-button:hover {
-  color: rgb(155,196,226);
-  border: 1px solid;
-  box-shadow: inset 0 0 10px rgba(155,196,226, .5), 0 0 10px rgba(155,196,226, .6);
-  outline-color: rgba(155,196,226, 0.8);
-  outline-offset: 15px;
-}
 
 .navigation {
   align-items: center;
@@ -97,6 +71,7 @@ nav li a:hover {
 img, video {
   width: 100%;
   height: auto;
+
 }
 .more a:hover {
   color: rgba(0,0,0,0.6);
@@ -104,11 +79,41 @@ img, video {
 
 main {
   text-align: center;
+  transition: all 750ms linear 250ms;
 }
 p {
   text-align: left;
 }
-
+.mobile {
+  display: none;
+}
+.desktop {
+  background: white;
+  display: flex;
+  margin-left: 24px;
+  padding-left: 0;
+  width: 100%;
+}
+.logo {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+}
+.logo span {
+  font-weight: bold;
+}
+nav li:nth-child(n+1) {
+  margin-right: 16px;
+}
+nav li:last-child {
+  margin-right: 24px;
+}
+/*First section*/
 #something-new {
   border-top: 1px solid grey;
   display: flex;
@@ -124,8 +129,6 @@ p {
 #something-new h1 {
   text-shadow: 0.1em 0.1em 0.1em rgba(255,255,255,0.7);
 }
-
-
 
 .start-here {
 padding: 32px 16px;
@@ -150,10 +153,45 @@ text-align: left;
 font-size: 4vw;
 line-height: 4rem;
 }
-
-#information {
-padding: 16px 16px 32px;
+button {
+  font-family: "Comfortaa", sans-serif;
+  background: white;
+  padding: 20px 40px;
+  color: black;
+  text-decoration: none;
+  font-size: 1.45em;
+  margin: 1rem 0;
+  width: 85%;
+  border-radius: 10px;
+  border: 1px solid grey;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .01);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1450ms cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+button:hover {
+  color: rgb(155,196,226);
+  border: 1px solid;
+  box-shadow: inset 0 0 10px rgba(155,196,226, .5), 0 0 10px rgba(155,196,226, .6);
+  outline-color: rgba(155,196,226, 0.8);
+  outline-offset: 15px;
+}
+/*Second section*/
+#information {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  background-color: white;
+  padding: 16px 16px 32px;
+}
+
+.information-text p{
+  text-align: center;
+}
+
 #information p {
 line-height: 1.3rem;
 font-size: 1.1rem;
@@ -171,13 +209,6 @@ height: 150px;
 overflow: hidden;
 }
 
-
-#information {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  background-color: white;
-}
 .practice {
   display: flex;
   flex-direction: column;
@@ -226,37 +257,9 @@ overflow: hidden;
 blockquote footer {
   margin-top: 32px;
 }
-.mobile {
-  display: none;
-}
-.desktop {
-  background: white;
-  display: flex;
-  margin-left: 24px;
-  padding-left: 0;
-  width: 100%;
-}
-.logo {
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  flex: 1;
-}
-.logo a {
-  display: flex;
-  align-items: center;
-}
-.logo span {
-  font-weight: bold;
-}
-nav li:nth-child(n+1) {
-  margin-right: 16px;
-}
-nav li:last-child {
-  margin-right: 24px;
-}
 
 
+/*Section three*/
 .featured-courses {
   padding: 50px 16px;
 }
@@ -265,54 +268,6 @@ nav li:last-child {
   text-align: center;
   width: 100%;
   padding-bottom: 16px;
-}
-
-.featured-courses img, .featured-courses .course-info p {
-  display: none;
-}
-
-.course-info h3 {
-  padding: 16px;
-  margin: 10px 0;
-  background: #f0f8ff;
-  margin-bottom: 8px;
-}
-.bottom-footer {
-  background: rgba(155, 196, 226,0.5);
-}
-footer {
-  border-top: 1px solid grey;
-  padding: 16px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-footer p {
-  padding-left: 3rem;
-}
-footer nav {
-  display: flex;
-}
-footer nav ul {
-  display: flex;
-  flex-direction: row;
-}
-footer nav ul li:first-child {
-  margin-right: 16px;
-}
-footer nav ul li:nth-child(n+2){
-  margin-right: 3rem;
-}
-
-}
-
-.copyright {
-  margin-left: 24px;
-}
-
-.information-text p{
-  text-align: center;
 }
 
 .orientation img, .campus img, .guest-lectures img {
@@ -334,9 +289,16 @@ footer nav ul li:nth-child(n+2){
 .featured-courses img {
   height: 154px;
 }
+.course-info h3 {
+  padding: 16px;
+  margin: 10px 0;
+  margin-bottom: 8px;
+}
+
 .course-info h3, .course-info {
   background: white;
 }
+
 .course-info p {
   padding: 0 16px 8px;
 }
@@ -353,6 +315,7 @@ footer nav ul li:nth-child(n+2){
 .course-card img {
   padding-bottom: 10px;
 }
+/*Workaround for the course cards (mini query)*/
 @media only screen (min-width: 501px){
 .course-card h3{
   display: none;
@@ -365,14 +328,12 @@ footer nav ul li:nth-child(n+2){
 .course-info {
   min-height: 100px;
 }
-.recent-exhibits, .exhibit-vid h3, .exhibit-vid p {
-  display: none;
-}
+/*Section four*/
+
 
 .exhibit-vid p {
   line-height: 1.4rem;
 }
-
 .exhibition-featured h2 {
   padding: 32px 0;
 }
@@ -393,7 +354,6 @@ footer nav ul li:nth-child(n+2){
   max-width: 423px;
   height: 168px;
 }
-
 .exhibit-card:hover {
   background-color: rgba(255,255,255,0.28);
 }
@@ -422,10 +382,49 @@ footer nav ul li:nth-child(n+2){
   flex-direction: column;
   padding-top: 24px;
 }
+/*Section five*/
+.bottom-footer {
+  background: rgba(155, 196, 226,0.3);
+}
+
+footer {
+  border-top: 1px solid grey;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer p {
+  padding-left: 3rem;
+}
+
+footer nav {
+  display: flex;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+footer nav ul li:first-child {
+  margin-right: 16px;
+}
+
+footer nav ul li:nth-child(n+2){
+  margin-right: 3rem;
+}
+
+.copyright {
+  margin-left: 24px;
+}
 
 
 
+/*Mobile version*/
 @media only screen and (max-width: 620px) {
+  /*All of the things to hide when in Mobile version*/
   .desktop,
   .practice,
   .start-here,
@@ -435,6 +434,8 @@ footer nav ul li:nth-child(n+2){
   .course-card .course-info p,
   .recent-exhibits,
   .exhibition-featured-info,
+  .exhibit-vid h3,
+  .exhibit-vid p,
   .footer-nav {
     display: none;
   }
